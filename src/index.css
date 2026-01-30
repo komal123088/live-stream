@@ -1,0 +1,272 @@
+/* ChatList.css */
+.chatlist-container {
+  padding: 15px;
+  padding-bottom: 80px;
+  margin-top: 55px;
+}
+
+.chatlist-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.chatlist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-item:hover {
+  background: #f0f2f5;
+}
+
+.chat-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.chat-info {
+  flex: 1;
+}
+
+.chat-info h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.last-message {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-timestamp {
+  font-size: 12px;
+  color: #999;
+}
+
+.no-chats {
+  text-align: center;
+  color: #888;
+  margin-top: 50px;
+}
+
+.chatlist-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ChatRoom.css */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 55px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.chat-header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.messages-list {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+
+.message {
+  max-width: 75%;
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 1.4;
+}
+
+.sent {
+  background: #ff69b4;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.received {
+  background: white;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timestamp {
+  font-size: 11px;
+  opacity: 0.7;
+  display: block;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.message-input {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 12px 15px;
+  background: white;
+  border-top: 1px solid #ddd;
+  z-index: 100;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.message-input button {
+  margin-left: 10px;
+  padding: 0 20px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.chat-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .chatlist-container {
+    padding: 10px;
+    padding-bottom: 90px;
+    margin-top: 0;
+  }
+  .chat-container {
+    height: 80vh;
+    margin-top: 0;
+  }
+
+  .message-input {
+    bottom: 90px;
+  }
+
+  .messages-list {
+    padding-bottom: 90px;
+  }
+  .message-input button {
+    margin-left: -90px;
+    padding: 0;
+    border-radius: 20px;
+    height: 40px;
+    width: 100px;
+    margin-top: 5px;
+  }
+}
+.chat-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.context-menu {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  min-width: 150px;
+}
+
+.context-menu button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 16px;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+.context-menu button:hover {
+  background-color: #f8f8f8;
+}
+.unread-badge {
+  background-color: #ff3b5c;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  margin-top: 4px;  
+}
