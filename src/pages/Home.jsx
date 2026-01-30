@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-import "../styles/Home.css";
+import "../styles/home.css";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ export default function Home() {
           {
             timeout: 8000,
             signal: controller.signal,
-          }
+          },
         );
 
         if (!mounted) return;
@@ -92,7 +92,7 @@ export default function Home() {
     setUsers(
       allUsers
         .filter((u) => u.firebaseUid !== currentUser?.uid)
-        .filter((u) => u.name?.toLowerCase().includes(q))
+        .filter((u) => u.name?.toLowerCase().includes(q)),
     );
   };
 
